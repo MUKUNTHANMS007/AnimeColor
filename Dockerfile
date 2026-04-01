@@ -20,7 +20,7 @@ COPY . /workspace
 RUN pip install -r requirements.txt
 
 # RunPod SDK
-RUN pip install runpod
+RUN pip install runpod huggingface_hub
 
 # Make start script executable
 RUN chmod +x start.sh
