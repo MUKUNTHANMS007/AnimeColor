@@ -9,9 +9,9 @@ def setup():
 
     # 1. Clone Code Repository if missing
     code_dir = os.path.join(base_dir, "AnimeColor_Code")
-    if not os.listdir(code_dir):
+    if not os.path.exists(code_dir) or not os.listdir(code_dir):
         print("Cloning AnimeColor repository...")
-        subprocess.run(["git", "clone", "https://github.com/IamCreateAI/AnimeColor", code_dir], check=True)
+        subprocess.run(["git", "clone", "-b", "gaurav/animecolor-deployment", "https://github.com/compilershader-svg/AnimeColor.git", code_dir], check=True)
 
     # 2. Download Models
     models = {

@@ -1,0 +1,34 @@
+{
+  "title": "AnimeColor AI",
+  "description": "Reference-based Animation Colorization with Diffusion Transformers. Generates high-quality animation colors from a single reference image and lineart frames.",
+  "type": "serverless",
+  "category": "video",
+  "iconUrl": "https://raw.githubusercontent.com/IamCreateAI/AnimeColor/main/assets/logo.png",
+  "config": {
+    "runsOn": "GPU",
+    "containerDiskInGb": 30,
+    "presets": [
+      {
+        "name": "NVIDIA L4 (Standard)",
+        "gpuTypeId": "NVIDIA L4",
+        "gpuCount": 1
+      },
+      {
+        "name": "NVIDIA A100 (High Speed)",
+        "gpuTypeId": "NVIDIA A100-80GB",
+        "gpuCount": 1
+      }
+    ],
+    "env": [
+      {
+        "key": "HF_TOKEN",
+        "input": {
+          "name": "Hugging Face Token",
+          "type": "string",
+          "description": "Optional: Your Hugging Face token to download private weights.",
+          "default": ""
+        }
+      }
+    ]
+  }
+}
